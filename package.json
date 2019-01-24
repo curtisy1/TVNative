@@ -2,23 +2,26 @@
   "name": "TVNative",
   "version": "0.0.1",
   "private": true,
+  "license": "MIT",
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
+    "debug": "react-devtools",
     "test": "jest"
   },
   "dependencies": {
     "react": "16.6.3",
-    "react-native": "0.57.8"
+    "react-native": "0.57.8",
+    "react-native-paper": "^2.5.0",
+    "react-native-side-menu": "github:curtisy1/react-native-side-menu",
+    "react-native-vector-icons": "^6.1.0"
   },
   "devDependencies": {
-    "@types/jest": "^23.3.12",
     "@types/react": "^16.7.20",
     "@types/react-native": "^0.57.28",
     "@types/react-test-renderer": "^16.0.3",
-    "jest": "23.6.0",
     "react-native-typescript-transformer": "^1.2.11",
-    "react-test-renderer": "16.6.3",
-    "ts-jest": "^23.10.5",
-    "typescript": "^3.2.4"
+    "tslint": "^5.12.1",
+    "typescript": "^3.2.4",
+    "typescript-tslint-plugin": "^0.2.1"
   }
 }
