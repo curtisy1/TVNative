@@ -2,20 +2,39 @@ import React, { Component } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Appbar } from 'react-native-paper';
 
-export class Header extends Component {
-    _onMore = () => console.log('Shown more');
+interface HeaderProps {
+    onMenuPress: (isOpen: boolean) => void;
+}
+
+interface HeaderState {
+    isOpen: boolean;
+}
+
+export class Header extends Component<HeaderProps, HeaderState> {
+    constructor(props: HeaderProps){
+        super(props);
+        this.state = {
+            isOpen: false
+        }
+
+        this.onMore = this.onMore.bind(this);
+    }
+    
+    onMore = () => this.setState({isOpen: !this.state.isOpen}, () => {
+        this.props.onMenuPress(this.state.isOpen);
+    })
 
     render() {
         return (
             <View>
                 <Appbar.Header>
+                    <Appbar.Action icon="menu" onPress={this.onMore} />
                     <Appbar.Content
                         title="TVNative"
                         subtitle="Overview"
                         titleStyle={styles.appHeader}
                         subtitleStyle={styles.appHeader}
                     />
-                    <Appbar.Action icon="menu" onPress={this._onMore} />
                 </Appbar.Header>
             </View>
         );
@@ -25,6 +44,6 @@ export class Header extends Component {
 const styles = StyleSheet.create({
     appHeader: {
         alignSelf: "center",
-        paddingLeft: 30
+        paddingRight: 60
     }
 })

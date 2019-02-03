@@ -12,7 +12,7 @@
     "react": "16.6.3",
     "react-native": "0.57.8",
     "react-native-paper": "^2.5.0",
-    "react-native-side-menu": "github:curtisy1/react-native-side-menu",
+    "react-native-ezsidemenu": "github:curtisy1/react-native-ezsidemenu",
     "react-native-vector-icons": "^6.1.0"
   },
   "devDependencies": {
