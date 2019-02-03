@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { View } from 'react-native';
 import { List } from 'react-native-paper';
 
-export class ChannelList extends Component {
+export class ChannelList extends React.Component {
     state = {
         expanded: false
     };

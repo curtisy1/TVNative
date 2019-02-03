@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Appbar } from 'react-native-paper';
 
@@ -10,8 +10,8 @@ interface HeaderState {
     isOpen: boolean;
 }
 
-export class Header extends Component<HeaderProps, HeaderState> {
-    constructor(props: HeaderProps){
+export class Header extends React.Component<HeaderProps, HeaderState> {
+    constructor(props: HeaderProps) {
         super(props);
         this.state = {
             isOpen: false
@@ -19,8 +19,8 @@ export class Header extends Component<HeaderProps, HeaderState> {
 
         this.onMore = this.onMore.bind(this);
     }
-    
-    onMore = () => this.setState({isOpen: !this.state.isOpen}, () => {
+
+    onMore = () => this.setState({ isOpen: !this.state.isOpen }, () => {
         this.props.onMenuPress(this.state.isOpen);
     })
 

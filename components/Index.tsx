@@ -1,9 +1,11 @@
-import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import React from 'react';
+import { View, ScrollView, StyleSheet, Text } from 'react-native';
 import { Provider as PaperProvider } from 'react-native-paper';
+import { createDrawerNavigator, createAppContainer, DrawerItems, SafeAreaView, DrawerItemsProps } from 'react-navigation';
 import { Header } from "./Header";
+import { Settings } from "./Settings";
 import { ChannelList } from "./ChannelList";
-import SideMenu from 'react-native-ezsidemenu';
+import { Sidemenu } from "./Sidemenu";
 
 interface MainViewProps {
 
@@ -13,8 +15,8 @@ interface MainViewState {
   sideMenuOpen: boolean;
 }
 
-export default class App extends Component<MainViewProps, MainViewState> {
-  constructor(props: MainViewProps){
+class MainView extends React.Component<MainViewProps, MainViewState> {
+  constructor(props: MainViewProps) {
     super(props);
     this.state = {
       sideMenuOpen: false
@@ -23,20 +25,53 @@ export default class App extends Component<MainViewProps, MainViewState> {
     this.onMenuPress = this.onMenuPress.bind(this);
   }
 
-  onMenuPress = () => this.setState({sideMenuOpen: !this.state.sideMenuOpen});
+  onMenuPress = () => this.setState({ sideMenuOpen: !this.state.sideMenuOpen });
 
   render() {
-    const menu = <View><Text>ABC</Text></View>;
-
     return (
       <PaperProvider>
-        <SideMenu menu={menu} type={SideMenu.type.Overlay}>
-          <View>
-            <Header onMenuPress={this.onMenuPress}/>
-            <ChannelList />
-          </View>
-        </SideMenu>
+        <View>
+          <Header onMenuPress={this.onMenuPress} />
+          <ChannelList />
+        </View>
       </PaperProvider>
     );
   }
 }
+
+const CustomDrawerContentComponent = (props: DrawerItemsProps) => (
+  <ScrollView>
+    <SafeAreaView style={styles.container} forceInset={{ top: 'always', horizontal: 'never' }}>
+      {/* <DrawerItems
+        {...props}
+      /> */}
+      <Sidemenu {...props} />
+    </SafeAreaView>
+  </ScrollView>
+);
+
+const SidebarDrawer = createDrawerNavigator({
+  Home: {
+    screen: MainView,
+  },
+  Settings: {
+    screen: Settings,
+  },
+  About: {
+    screen: MainView,
+  }
+}, {
+    contentComponent: CustomDrawerContentComponent,
+    contentOptions: {
+
+    }
+  });
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});
+
+const App = createAppContainer(SidebarDrawer);
+export default App;
