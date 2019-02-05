@@ -60,3 +60,6 @@ buck-out/
 
 #VSCode
 .vscode
+
+#internal files
+DBStructure.txt
