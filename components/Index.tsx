@@ -6,6 +6,7 @@ import { Header } from "./Header";
 import { Settings } from "./Settings";
 import { ChannelList } from "./ChannelList";
 import { Sidemenu } from "./Sidemenu";
+import TvDB from "../database/DbConnector";
 
 interface MainViewProps {
 
@@ -25,6 +26,10 @@ class MainView extends React.Component<MainViewProps, MainViewState> {
     this.onMenuPress = this.onMenuPress.bind(this);
   }
 
+  componentDidMount(){
+    TvDB.onLoaded(() => console.log("Database initialized"));
+  }
+
   onMenuPress = () => this.setState({ sideMenuOpen: !this.state.sideMenuOpen });
 
   render() {
@@ -42,9 +47,6 @@ class MainView extends React.Component<MainViewProps, MainViewState> {
 const CustomDrawerContentComponent = (props: DrawerItemsProps) => (
   <ScrollView>
     <SafeAreaView style={styles.container} forceInset={{ top: 'always', horizontal: 'never' }}>
-      {/* <DrawerItems
-        {...props}
-      /> */}
       <Sidemenu {...props} />
     </SafeAreaView>
   </ScrollView>
