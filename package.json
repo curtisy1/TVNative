@@ -10,21 +10,20 @@
   },
   "dependencies": {
     "react": "16.6.3",
-    "react-native": "0.57.8",
+    "react-native": "^0.58.4",
     "react-native-gesture-handler": "^1.0.15",
     "react-native-paper": "^2.5.0",
-    "react-native-vector-icons": "^6.1.0",
-    "react-navigation": "^3.1.2",
-    "vasern": "^0.2.95"
+    "react-native-vector-icons": "^6.3.0",
+    "react-navigation": "^3.2.3",
+    "vasern": "^0.3.0"
   },
   "devDependencies": {
-    "@types/react": "^16.7.20",
-    "@types/react-native": "^0.57.28",
-    "@types/react-navigation": "^3.0.1",
-    "@types/react-test-renderer": "^16.0.3",
+    "@types/react": "^16.8.3",
+    "@types/react-native": "^0.57.36",
+    "@types/react-navigation": "^3.0.2",
     "react-native-typescript-transformer": "^1.2.11",
     "tslint": "^5.12.1",
-    "typescript": "^3.2.4",
-    "typescript-tslint-plugin": "^0.2.1"
+    "typescript": "^3.3.3",
+    "typescript-tslint-plugin": "^0.3.1"
   }
 }

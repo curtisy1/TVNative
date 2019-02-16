@@ -1,7 +1,7 @@
 import React from 'react';
-import { View, ScrollView, StyleSheet, Text } from 'react-native';
+import { View, ScrollView, StyleSheet } from 'react-native';
 import { Provider as PaperProvider } from 'react-native-paper';
-import { createDrawerNavigator, createAppContainer, DrawerItems, SafeAreaView, DrawerItemsProps } from 'react-navigation';
+import { createDrawerNavigator, createAppContainer, SafeAreaView, DrawerItemsProps } from 'react-navigation';
 import { Header } from "./Header";
 import { Settings } from "./Settings";
 import { ChannelList } from "./ChannelList";
