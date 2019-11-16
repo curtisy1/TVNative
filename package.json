@@ -4,26 +4,18 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "start": "node node_modules/react-native/local-cli/cli.js start",
-    "debug": "react-devtools",
-    "test": "jest"
+    "start": "node node_modules/react-native/local-cli/cli.js start"
   },
   "dependencies": {
-    "react": "16.6.3",
-    "react-native": "^0.58.4",
-    "react-native-gesture-handler": "^1.0.15",
-    "react-native-paper": "^2.5.0",
-    "react-native-vector-icons": "^6.3.0",
-    "react-navigation": "^3.2.3",
-    "vasern": "^0.3.0"
+    "react": "16.12.0",
+    "react-native": "^0.61.4",
+    "react-native-gesture-handler": "^1.5.0",
+    "react-native-paper": "^3.2.1",
+    "react-native-vector-icons": "^6.6.0"
   },
   "devDependencies": {
     "@types/react": "^16.8.3",
     "@types/react-native": "^0.57.36",
-    "@types/react-navigation": "^3.0.2",
-    "react-native-typescript-transformer": "^1.2.11",
-    "tslint": "^5.12.1",
-    "typescript": "^3.3.3",
-    "typescript-tslint-plugin": "^0.3.1"
+    "typescript": "^3.3.3"
   }
 }
