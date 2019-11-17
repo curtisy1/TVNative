@@ -97,10 +97,16 @@ android {
     compileSdkVersion rootProject.ext.compileSdkVersion
     buildToolsVersion rootProject.ext.buildToolsVersion
 
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
     defaultConfig {
         applicationId "com.tvnative"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
+        missingDimensionStrategy "RNN.reactNativeVersion", "reactNative60"
         versionCode 1
         versionName "1.0"
     }
@@ -136,10 +142,10 @@ android {
 dependencies {
     implementation project(':react-native-vector-icons')
     implementation project(':react-native-gesture-handler')
-    implementation project(':vasern')
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
     implementation "com.facebook.react:react-native:+"  // From node_modules
+    implementation project(':react-native-navigation')
 }
 
 // Run this once to be able to run the application with BUCK

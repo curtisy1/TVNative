@@ -1,21 +1,26 @@
-
-import React from 'react';
-import { NavigationActions, DrawerItemsProps } from 'react-navigation';
-import { ScrollView, Text, View, StyleSheet, GestureResponderEvent } from 'react-native';
+import React from "react";
+import { Navigation } from "react-native-navigation";
+import {
+  ScrollView,
+  Text,
+  View,
+  StyleSheet,
+  GestureResponderEvent
+} from "react-native";
 
 interface CustomEvent {
   event: GestureResponderEvent;
   path: string;
 }
 
-export class Sidemenu extends React.Component<DrawerItemsProps, {}> {
+export default class Sidemenu extends React.Component {
   navigateToScreen = (evt: CustomEvent) => {
-    const navigateAction = NavigationActions.navigate({
-      routeName: evt.path
+    Navigation.push((this.props as any).componentId, {
+      component: {
+        name: `TvNative.${evt.path}`
+      }
     });
-
-    this.props.navigation.dispatch(navigateAction);
-  }
+  };
 
   render() {
     return (
@@ -23,14 +28,24 @@ export class Sidemenu extends React.Component<DrawerItemsProps, {}> {
         <ScrollView>
           <View>
             <View style={styles.navSectionStyle}>
-              <Text style={styles.navItemStyle} onPress={(evt) => this.navigateToScreen({event: evt, path: "Settings"})}>
+              <Text
+                style={styles.navItemStyle}
+                onPress={evt =>
+                  this.navigateToScreen({ event: evt, path: "Settings" })
+                }
+              >
                 Settings
               </Text>
             </View>
           </View>
           <View>
             <View style={styles.navSectionStyle}>
-              <Text style={styles.navItemStyle} onPress={(evt) => this.navigateToScreen({event: evt, path: "About"})}>
+              <Text
+                style={styles.navItemStyle}
+                onPress={evt =>
+                  this.navigateToScreen({ event: evt, path: "About" })
+                }
+              >
                 About
               </Text>
             </View>
@@ -50,7 +65,7 @@ const styles = StyleSheet.create({
     padding: 10
   },
   navSectionStyle: {
-    backgroundColor: 'lightgrey'
+    backgroundColor: "lightgrey"
   },
   sectionHeadingStyle: {
     paddingVertical: 10,
@@ -58,6 +73,6 @@ const styles = StyleSheet.create({
   },
   footerContainer: {
     padding: 20,
-    backgroundColor: 'lightgrey'
+    backgroundColor: "lightgrey"
   }
 });
