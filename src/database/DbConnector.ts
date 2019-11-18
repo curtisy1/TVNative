@@ -1,16 +1,16 @@
-import { Aspects } from './models/Aspects';
-import { Casts } from './models/Casts';
-import { Categories } from './models/Categories';
-import { Channels } from './models/Channels';
-import { Countries } from './models/Countries';
-import { Credits } from './models/Credits';
-import { Languages } from './models/Languages';
-import { Roles } from './models/Roles';
-import { Settings } from './models/Settings';
-import { Shows } from './models/Shows';
-import { SubTitles } from './models/SubTitles';
-import { Titles } from './models/Titles';
-import { Videos } from './models/Videos';
+import { Aspects } from './models/Aspect';
+import { Casts } from './models/Cast';
+import { Categories } from './models/Category';
+import { Channels } from './models/Channel';
+import { Countries } from './models/Country';
+import { Credits } from './models/Credit';
+import { Languages } from './models/Language';
+import { Roles } from './models/Role';
+import { Settings } from './models/Setting';
+import { Shows } from './models/Show';
+import { SubTitles } from './models/Subtitle';
+import { Titles } from './models/Title';
+import { Videos } from './models/Video';
 
 // const TvDB = new Vasern({
 //     schemas: [
